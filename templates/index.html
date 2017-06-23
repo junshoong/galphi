@@ -5,9 +5,18 @@
     <title>Galphi</title>
 </head>
 <body>
-<h1>
-    Galphi service!
-</h1>
-<a href="{% url 'login' %}">login</a>
+<h1> Galphi service! </h1>
+<h2>
+    Hello
+    {% if user.is_active %} {{ user.username }}!
+    {% else %} Guest!
+    {% endif %}
+</h2>
+
+{% if user.is_active %}
+    <a href="{% url 'logout' %}">logout</a>
+{% else %}
+    <a href="{% url 'login' %}">login</a>
+{% endif %}
 </body>
 </html>
