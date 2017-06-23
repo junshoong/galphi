@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>galphi - bookmark</title>
+</head>
+<body>
+<ul>
+    {% for b in bookmark %}
+        <a href="{{ b.link }}">
+            <li>
+                {{ b.title }} - {{ b.link }} ,
+                {% for t in b.tag.all %}
+                    {{ t.name }}
+                {% endfor %}
+            </li>
+        </a>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
