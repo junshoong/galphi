@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from galphi.views import HomeView
+from django.contrib.auth.views import LoginView
+
 
 urlpatterns = [
+    url(r'^$', HomeView.as_view(), name='home'),
     url(r'^admin/', admin.site.urls),
+    url(r'^login/', LoginView.as_view(), name='login'),
 ]
