@@ -8,11 +8,5 @@
         {% else %} Guest!
         {% endif %}
     </h2>
-
-    {% if user.is_active %}
-        <a href="{% url 'logout' %}">logout</a>
-    {% else %}
-        <a href="{% url 'login' %}">login</a>
-    {% endif %}
 </div>
 {% endblock %}
