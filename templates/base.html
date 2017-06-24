@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <title> Galphi - {% block title %}{% endblock %}</title>
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap.min.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "main.css" %}" />
+
+    <title> Galphi{% block title %}{% endblock %}</title>
 </head>
 <body>
 {% block header %}
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div id="logo" class="container">
+        <a class="navbar-brand" href="#">Galphi</a>
+    </div>
+
+    </nav>
 
 {% endblock %}
 {% block content %}

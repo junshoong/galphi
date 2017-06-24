@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
-<h1> Galphi service! </h1>
-<h2>
-    Hello
-    {% if user.is_active %} {{ user.username }}!
-    {% else %} Guest!
-    {% endif %}
-</h2>
+<div class="container">
+    <h1> Galphi service! </h1>
+    <h2>
+        Hello
+        {% if user.is_active %} {{ user.username }}!
+        {% else %} Guest!
+        {% endif %}
+    </h2>
 
-{% if user.is_active %}
-    <a href="{% url 'logout' %}">logout</a>
-{% else %}
-    <a href="{% url 'login' %}">login</a>
-{% endif %}
+    {% if user.is_active %}
+        <a href="{% url 'logout' %}">logout</a>
+    {% else %}
+        <a href="{% url 'login' %}">login</a>
+    {% endif %}
+</div>
 {% endblock %}
