@@ -21,7 +21,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 
 urlpatterns = [
-    url(r'^$', HomeView.as_view(), name='home'),
+    # url(r'^$', HomeView.as_view(), name='home'),
     url(r'^admin/', admin.site.urls),
 
     # Login, Logout
@@ -29,5 +29,5 @@ urlpatterns = [
     url(r'^logout/$', LogoutView.as_view(), name='logout'),
 
     # Bookmark
-    url(r'^bookmark/', include('bookmark.urls')),
+    url(r'^', include('bookmark.urls')),
 ]
