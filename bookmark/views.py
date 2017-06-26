@@ -11,7 +11,7 @@ def list_and_create(request):
         objects = None
     else:
         objects = Bookmark.objects.filter(writer=request.user)
-    return render(request, 'bookmark/bookmark_list.html', {
-        'bookmark': objects,
+    return render(request, 'bookmark/index.html', {
+        'bookmark': objects, 'form': form,
     })
 
