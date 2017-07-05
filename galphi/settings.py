@@ -123,6 +123,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
+STATIC_ROOT = '/var/galphi/static-files'
+# MEDIA_ROOT = os.path.join(BASE_DIR, ‘media’)
+MEDIA_ROOT = '/var/galphi/media-files'
+MEDIA_URL = '/media/'
 
 LOGIN_URL = '/login/'
 LOGOUT = '/logout/'

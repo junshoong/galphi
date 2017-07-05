@@ -1,0 +1,18 @@
+server {
+    listen 80;
+    server_name;
+    charset utf-8;
+
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/tmp/galphi.sock;
+    }
+
+    location /static/ {
+        /var/galphi/static-files;
+    }
+
+    location /media/ {
+        /var/galphi/media-files;
+    }
+}

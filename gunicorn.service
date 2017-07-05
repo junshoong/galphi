@@ -1,0 +1,11 @@
+[Unit]
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+User=root
+Group=www-data
+WorkingDirectory=<user_directory>
+ExecStart=/usr/local/bin/gunicorn --access-logfile - --bind unix:/tmp/galphi.sock galphi.wsgi
+[Install]
+WantedBy=multi-user.target
