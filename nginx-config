@@ -9,10 +9,10 @@ server {
     }
 
     location /static/ {
-        /var/galphi/static-files;
+        root /var/galphi;
     }
 
     location /media/ {
-        /var/galphi/media-files;
+        root /var/galphi;
     }
 }

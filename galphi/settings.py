@@ -25,7 +25,7 @@ SECRET_KEY = 's=k(bk7)&**nfcvfn(mbft^^4%j3+km&6%et4ul5d-d)#3hd#9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*',]
 
 
 # Application definition
@@ -77,8 +77,11 @@ WSGI_APPLICATION = 'galphi.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'OPTIONS': {
+            'read_default_file': os.path.join(BASE_DIR, 'my.cnf'),
+        },
     }
 }
 
@@ -120,12 +123,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/var/galphi/static'
 STATICFILES_DIRS = [
+#    STATIC_ROOT,
     os.path.join(BASE_DIR, 'static'),
 ]
-STATIC_ROOT = '/var/galphi/static-files'
 # MEDIA_ROOT = os.path.join(BASE_DIR, ‘media’)
-MEDIA_ROOT = '/var/galphi/media-files'
+MEDIA_ROOT = '/var/galphi/media'
 MEDIA_URL = '/media/'
 
 LOGIN_URL = '/login/'

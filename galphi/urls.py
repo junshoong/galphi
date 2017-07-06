@@ -13,11 +13,14 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.conf.urls import url
 from django.conf.urls import include
+from django.conf.urls.static import static
 from django.contrib import admin
-from galphi.views import HomeView
 from django.contrib.auth.views import LoginView, LogoutView
+
+from galphi.views import HomeView
 
 
 urlpatterns = [
@@ -30,4 +33,4 @@ urlpatterns = [
 
     # Bookmark
     url(r'^', include('bookmark.urls')),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
